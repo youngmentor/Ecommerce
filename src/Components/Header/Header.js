@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.css'
 import Logo from './Logo.png'
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import {MdOutlineLightMode} from 'react-icons/md';
 import {MdOutlineNightlight} from 'react-icons/md';
 const Header = () => {
+    const [theme, setTheme] = useState (false)
+
   return (
     <div className='Header'>
         <div className='Header-logo'>
@@ -17,7 +19,7 @@ const Header = () => {
             
         </div>
         <div className='Header-toggle'>
-            <MdOutlineLightMode className='tog'/> <MdOutlineNightlight className='tog' color='white'/>
+          {theme? <MdOutlineLightMode onClick={()=>{setTheme(!theme)}} className='tog'/> :<MdOutlineNightlight onClick={()=>{setTheme(!theme)}} className='tog' color='white'/>}
             </div>
     </div>
   )
