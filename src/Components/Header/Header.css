@@ -1,0 +1,80 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.Header {
+    width: 100%;
+    color: black;
+    display: flex;
+    align-items: center;
+    background-color: blue;
+    justify-content: space-between;
+    box-shadow: 0px 11px 24px 0px rgba(66, 68, 90, 1);
+    padding: 20px;
+}
+
+.Header-logo img {
+    width: 120px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.Header-links {
+    width: 400px;
+    /* background-color: grey; */
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    gap: 30px;
+    justify-content: space-around;
+}
+.link1:hover{
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 40px;
+    background-color: aqua;
+    transition: background 0.5s ease-in;
+    cursor: pointer;
+} 
+.link2:hover{
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 40px;
+    background-color: aqua;
+    transition: background 0.5s ease-in;
+    cursor: pointer;
+} 
+.cart {
+    display: flex;
+    gap: 5px;
+}
+.cart:hover{
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 40px;
+    background-color: aqua;
+    transition: background 0.5s ease-in;
+    cursor: pointer;
+}
+.Header-toggle{
+    width: 90px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tog{
+    width: 80px;
+    height: 40px;
+}
