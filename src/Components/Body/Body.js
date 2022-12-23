@@ -1,35 +1,49 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
-import Cards from '../Cards/Cards'
-import axios from 'axios'
-import './Body.css'
+import React, {useEffect, useState} from 'react'
+import axios from "axios"
+import Cards from '../Cards/Cards';
+import Slider from "react-slick";
+import "./Body.css"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import clothes from './Clothing.jpg'
+import Electric from './Electronics.jpg'
+import Jewelry from './Jewelry.jpg'
+
+
+
 const Body = () => {
-    const [products, setProducts] = useState([])
-    async function getProducts(){
-      try{
-       const res = await axios.get('https://fakestoreapi.com/products')
-       console.log(res.data)
-       setProducts(res.data)
-      }catch(error){
-         if (error.response){
-          console.log(error.response.data)
-          console.log(error.response.status)
-          console.log(error.response.headers)
-         }else if (error.request){
-          console.log (error.request);
-         }else {
-          console.log('Error', error.message)
-         }
-         console.log(error.config);
-      }
-    }
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 4000,
+    autoplaySpeed: 5000,
+    cssEase: "linear"
+  };
+
   
-  
-  useEffect(()=>{
-    getProducts()
-  },[])
   return (
-    <div>
+    <div className="Body-holder">
+      <div className="slider">
+        <Slider {...settings}>
+          <div className="slider-div">
+            <h2>Get Clothes</h2>
+            <img src={clothes} alt="clothes" className="slider-image" />
+          </div>
+          <div className="slider-div">
+            <h2>Get Jewelries</h2>
+            <img src={Jewelry} alt="jewelry" className="slider-image" />
+          </div>
+          <div className="slider-div">
+            <h2>Get Electronics</h2>
+            <img src={Electric} alt="electronics" className="slider-image" />
+          </div>
+        </Slider>
+      </div>
       <Cards/>
     </div>
   )

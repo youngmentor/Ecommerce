@@ -3,3 +3,25 @@
     margin: 0px;
     box-sizing: border-box;
 }
+.Body-holder{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+.slider{
+    width: 96%;
+    text-align: center;
+    margin-block: 45px;
+}
+
+.slider-div{
+    width: 100%;
+    height: 420px;
+}
+.slider-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
