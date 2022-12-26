@@ -30,6 +30,22 @@
     gap: 30px;
     justify-content: space-around;
 }
+.func{
+    display: none;
+}
+.Header-nav{
+    display: none;
+}
+.Header-nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 25px;
+    padding-top: 10px;
+  }
+  .Header-burger{
+    display: none;
+  }
 .link1:hover{
     width: 80px;
     display: flex;
@@ -55,6 +71,8 @@
 .cart {
     display: flex;
     gap: 5px;
+    text-decoration: none;
+    color: white;
 }
 .cart:hover{
     width: 80px;
@@ -74,12 +92,108 @@
     align-items: center;
     justify-content: center;
 }
+.dropDown{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 10%;
+    left: 45%;
+}
+.Drop{
+   width: 150px;
+   margin: 15px;
+  
+}
+.Drop p{
+    color: black;
+    background-color: #808080;
+    line-height: 1.2;
+    z-index: 1000;
+    padding: 5px;
+    cursor: pointer;
+}
+.List{
+    background-color: white;
+}
+.List:hover{
+    background-color: whitesmoke;
+}
+.List1:hover{
+    background-color: whitesmoke;
+}
+.List2:hover{
+    background-color: whitesmoke;
+}
 .tog{
     width: 80px;
     height: 40px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
     .Header-links{
         display: none;
     }
+    .Header-burger {
+        display: flex;
+      }
+      .Header-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 95%;
+      }
+      .Header-nav-menu {
+        width: 60%;
+        height: 100vh;
+        position: absolute;
+        background-color: grey;
+        top: 100px;
+        left: 170px;
+        display: flex;
+        justify-content: center;
+      }
+      .func {
+        display: flex;
+        width: 70%;
+        position: absolute;
+        top:0px;
+        bottom: -500px;
+        right: 246px;
+      }
 }
+@media screen and (max-width: 425px) {
+    /* .nav {
+      display: none;
+    } */
+    /* .Header-nav {
+      width: 60%;
+      height: 100vh;
+      position: absolute;
+      background-color: grey;
+      top: 100px;
+      left: 170px;
+      display: flex;
+      justify-content: center;
+    } */
+    /* .func {
+      display: flex;
+      width: 70%;
+      position: absolute;
+      top:0px;
+      bottom: -500px;
+      right: 246px;
+    } */
+    /* .Header-burger {
+      display: flex;
+    } */
+    /* .Header-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 95%;
+    } */
+    /* .Header-toggle{
+      display: none;
+    } */
+  }

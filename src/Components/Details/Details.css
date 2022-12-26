@@ -11,17 +11,19 @@
     justify-content: center;
     align-items: center;
     color: black;
+    margin-top: 100px;
 }
 .Details-Card{
+    background-color: gray;
     flex-wrap: wrap;
     width: 60%;
-    height: 50%;
-    background-color: white;
+    height: 70%;
     display: flex;
     padding: 5px;
     gap: 20px;
 }
 .Detail-desc{
+    /* margin-top: 100px; */
     font-size: 15px;
 }
 .Details-Image-Holder{
@@ -36,6 +38,8 @@
 }
 .Details-details{
     width: 50%;
+    height: 60%;
+    background-color: white;
     flex: 2;
     display: flex;
     flex-direction: column;
@@ -43,22 +47,26 @@
     align-items: center;
 }
 .price{
-    width: 250px;
-    display: flex;
-    margin-top: 20px;
-    align-items: center;
-    justify-content: center;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
 }
-.Detail-button{
-    width: 200px;
-    padding-inline: 50px;
-    padding-block: 10px;
-    background-color: rgb(245, 39, 73);
-    color: white;
-    border-radius: 5px;
-    margin-top: 20px;
+.Cart-Button{
+    width: 100px;
+    background-color: tomato;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    border-radius: 8px;
+    height: 30px;
+}
+.Cart-Button button{
+    background-color: tomato;
+    border:none;
 }
 .Detail-bottom{
+    margin: 100px;
+    background-color: gold;
     width: 400px;
     gap: 15px;
     display: flex;
@@ -72,15 +80,6 @@
     }
     .Detail-desc{
         font-size: 10px;
-    }
-    .Detail-button{
-        width: 70px;
-        font-size: 10px;
-        display: flex;
-        background-color: rgb(245, 39, 73);
-        color: white;
-        border-radius: 5px;
-        margin-top: 20px;
     }
     .price{
         width: 150px;

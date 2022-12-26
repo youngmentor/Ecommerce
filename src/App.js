@@ -1,25 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Body from './Components/Body/Body'
 import './App.css'
 import Header from './Components/Header/Header'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Detail from './Components/Details/Details'
+import Cart from './Components/Cart/Cart'
 const App = () => {
-  const [background, setBackground] = useState('grey')
-
-  const Click=()=>{
-    setBackground(background)
-  }
-  useEffect(()=>{
-      document.body.style.backgroundColor = background
-  }, [background])
+ 
   return (
-    <div className='App' style={{background: background}}>
+    <div className='App'>
        <Router>
-        <Header  handleClick={Click} />
+        <Header  />
         <Routes>
           <Route path='/' element={<Body/>}/>
           <Route path='/detail/:id' element={<Detail/>}/>
+          <Route path='/cart' element={<Cart/>}/>
         </Routes>
        </Router>
     </div>

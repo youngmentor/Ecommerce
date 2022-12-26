@@ -16,6 +16,7 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
+    background-color: grey;
     gap: 27px;
 }
 .hvr-float-shadow{

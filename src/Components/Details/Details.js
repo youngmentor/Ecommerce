@@ -47,8 +47,8 @@ const Details = () => {
               <h4>Price: ₦ {products.price}</h4>
               <h5>Rating: 3.5</h5>
               </div>
-            <div className="Detail-button">
-              Add to cart
+            <div className="Cart-Button">
+              <button>Add to cart</button>
             </div>
           </div>
 
