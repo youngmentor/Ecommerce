@@ -11,7 +11,7 @@ import Jewelry from './Jewelry.jpg'
 
 
 
-const Body = () => {
+const Body = ({color, change}) => {
 
   const settings = {
     dots: true,
@@ -44,7 +44,7 @@ const Body = () => {
           </div>
         </Slider>
       </div>
-      <Cards/>
+      <Cards theme={color}/>
     </div>
   )
 }

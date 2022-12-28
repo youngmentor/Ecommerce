@@ -106,24 +106,27 @@
    margin: 15px;
   
 }
-.Drop p{
-    color: black;
-    background-color: #808080;
-    line-height: 1.2;
-    z-index: 1000;
+.drop-list{
+    background-color: gray;
+    position: absolute;
+    top: 100px;
     padding: 5px;
-    cursor: pointer;
 }
+.invisible{
+    background-color: none;
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+
+}
+
 .List{
-    background-color: white;
+   text-decoration: none;
+   line-height: 1.4;
+   color: black;
 }
-.List:hover{
-    background-color: whitesmoke;
-}
-.List1:hover{
-    background-color: whitesmoke;
-}
-.List2:hover{
+.List-item:hover{
     background-color: whitesmoke;
 }
 .tog{

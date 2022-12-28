@@ -2,17 +2,15 @@ import '../App.css'
 import { useState } from "react"
 import { MdOutlineLightMode } from 'react-icons/md';
 import { MdOutlineNightlight } from 'react-icons/md';
-const Theme = () => {
-     const [toggle, setToggle] = useState(false)
+const Theme = ({theme, toggler}) => {
+   
     return (
         <div className='theme'>
-           {toggle ? <MdOutlineLightMode onClick={() => { setToggle(!toggle) }}
+           {theme ? <MdOutlineLightMode onClick={() =>{toggler()} }
           className='tog' /> :
-          <MdOutlineNightlight onClick={() => { setToggle(!toggle) }}
-            className='tog' color='white' />}
+          <MdOutlineNightlight onClick={() => {toggler()}}
+            className='tog' color='black' />}
         </div>
-
-
     )
 }
 

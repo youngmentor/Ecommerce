@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import "./Details.css";
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 const Details = () => {
   const { id } = useParams()
@@ -47,11 +47,10 @@ const Details = () => {
               <h4>Price: ₦ {products.price}</h4>
               <h5>Rating: 3.5</h5>
               </div>
-            <div className="Cart-Button">
+            <Link className="Cart-Button" to={'/cart'}>
               <button>Add to cart</button>
-            </div>
+            </Link>
           </div>
-
         </div>
       </div>
     </div>

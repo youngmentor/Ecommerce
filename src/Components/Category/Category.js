@@ -1,46 +1,36 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-// import "./Details.css";
-// import Menu from '../../Menu';
-import { useParams } from "react-router-dom"
-const Category = () => {
-    const { id } = useParams()
-    const [products, setProducts] = useState([]);
-    const [state, setState] = useState(false)
+import { useParams, Link } from "react-router-dom"
+import './Category.css'
+const Category = ({color}) => {
+  const { cs } = useParams()
+  const [catigory, setCategory] = useState()
 
-    const showDrop=()=>{
-      setState(true)
-    };
-    const hideDrop=()=>{
-      setState(false)
-    };
-  
-    async function getProducts() {
-      try {
-        const res = await axios.get(`https://fakestoreapi.com/products`)
-        console.log(res.data);
-        setProducts(res.data)
-      } catch (error) {
-        if (error.response) {
-          console.log(error.response.data);
-          console.log(error.response.status);
-          console.log(error.response.headers);
-        } else if (error.request) {
-          console.log(error.request);
-        } else {
-          console.log('Error', error.message);
-        }
-        console.log(error.config);
-      }
-    }
-  
-    useEffect(() => {
-      getProducts()
-    }, [])
+  async function getCategories() {
+    const res = await axios.get(`https://fakestoreapi.com/products/category/${cs}`)
+    setCategory(res.data)
+  }
+
+  useEffect(() => {
+    getCategories()
+  }, [cs])
   return (
-    <>
- hello wolrd
-    </>
+    <div className='Category-Holder'>
+      <div className='Category-Item-Holder'>
+        {catigory?.map((item) => (
+          <Link key={item.id} className='Category-Place-holder' to={`/detail/${item.id}`} style={{ backgroundColor: color ? 'white' : null }}>
+            <div className='Category-Image-holder'>
+              <img src={item.image} className='Category-Image' />
+            </div>
+            <div className='Category-Details'>
+              <p>{item.title}</p>
+              <h4> Price: ₦ {item.price}</h4>
+              <h4>Ratings: 4.9</h4>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
   )
 }
 export default Category

@@ -5,7 +5,6 @@
 }
 .Card-Holder{
     width: 100%;
-    height: 100%;
     display: flex;
     padding-inline: 10px;
     flex-wrap: wrap;
@@ -16,15 +15,14 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-    background-color: grey;
     gap: 27px;
 }
-.hvr-float-shadow{
+.Card-place-holder{
+    background-color: gray;
+    border-radius: 8px;
     width: 250px;
     height: 280px;
     color:black;
-    background: white;
-    border-radius: 3px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,7 +31,7 @@
     margin-block: 20px;
 }
 
-.hvr-float-shadow {
+.Card-place-holder{
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -46,7 +44,7 @@
     transition-property: transform;
     text-decoration: none;
   }
-  .hvr-float-shadow:before {
+  .Card-place-holder:before {
     pointer-events: none;
     position: absolute;
     z-index: -1;
@@ -64,18 +62,18 @@
     -webkit-transition-property: transform, opacity;
     transition-property: transform, opacity;
   }
-  .hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
+  .Card-place-holder:hover, .Card-place-holder:focus, .Card-place-holder:active {
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px);
   }
-  .hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
+  .Card-place-holder:hover:before, .Card-place-holder:focus:before, .Card-place-holder:active:before {
     opacity: 1;
     transform: translateY(5px);
     transform: translateY(5px);
   }
 
 
-.hvr-float-shadow p{
+.Card-place-holder p{
     font-size: 16px;
     text-overflow: ellipsis;
     overflow: hidden;
