@@ -28,7 +28,7 @@ const App = () => {
     localStorage.setItem('state', state);
   }, [state])
   return (
-    <div className='App' style={{backgroundColor: state? 'black': null}}>
+    <div className='App' style={{backgroundColor: state? 'gray': null}}>
        <Router>
         <Header color={state} change={Add} />
         <Routes>
