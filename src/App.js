@@ -6,21 +6,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Detail from './Components/Details/Details'
 import Cart from './Components/Cart/Cart'
 import Category from './Components/Category/Category'
-import { BsFillNutFill } from 'react-icons/bs'
-
 function reducer(state, action){
   switch (action.type){
     case 'Add':
       return !state
   }
 }
-
-
 const App = () => {
   
   const [state, dispatch] = useReducer(reducer,JSON.parse(localStorage.getItem('state')))
-
-
   function Add (){
     dispatch({type: 'Add'})
   }
