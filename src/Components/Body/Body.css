@@ -20,6 +20,9 @@
     width: 100%;
     height: 420px;
 }
+.slider-div h2{
+    color: black;
+}
 .slider-image{
     width: 100%;
     height: 100%;
