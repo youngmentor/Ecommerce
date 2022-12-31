@@ -103,24 +103,24 @@
     left: 45%;
 }
 .Drop{
-   /* width: 70px; */
+   width: 70px;
    margin: 15px;
   
 }
 .drop-list{
     background-color: gray;
     position: absolute;
-    top: 70px;
+    top: 150px;
     padding: 5px;
 }
-/* .invisible{
+.invisible{
     background-color: none;
     width: 150px;
     height: 50px;
     position: absolute;
     top: 50px;
 
-} */
+}
 
 .List{
    text-decoration: none;

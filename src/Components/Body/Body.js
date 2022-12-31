@@ -11,7 +11,7 @@ import Jewelry from './Jewelry.jpg'
 
 
 
-const Body = ({color, change}) => {
+const Body = ({color}) => {
 
   const settings = {
     dots: true,

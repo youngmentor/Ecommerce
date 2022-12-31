@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Detail from './Components/Details/Details'
 import Cart from './Components/Cart/Cart'
 import Category from './Components/Category/Category'
+
+
 function reducer(state, action){
   switch (action.type){
     case 'Add':
