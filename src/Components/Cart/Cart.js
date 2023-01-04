@@ -2,7 +2,7 @@ import './Cart.css'
 import { useEffect, useState } from 'react'
 import { BsCart3 } from "react-icons/bs";
 const Cart = () => {
-
+//  const [load, setLoad] = useState(false)
     return (
         <div className='Cart_wrap'>
             <div className='Cart_holder'>

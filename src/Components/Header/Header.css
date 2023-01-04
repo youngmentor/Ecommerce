@@ -108,9 +108,9 @@
   
 }
 .drop-list{
-    background-color: gray;
+    background-color: cornflowerblue;
     position: absolute;
-    top: 150px;
+    top: 100px;
     padding: 5px;
 }
 .invisible{

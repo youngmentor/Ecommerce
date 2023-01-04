@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 .Category-Holder{
+    /* height: 100%; */
     margin-top: 100px;
     width: 100%;
     display: flex;

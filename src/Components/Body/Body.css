@@ -4,21 +4,23 @@
     box-sizing: border-box;
 }
 .Body-holder{
-    margin-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
 }
 .slider{
-    width: 96%;
+    width: 80%;
     text-align: center;
     margin-block: 45px;
 }
 
 .slider-div{
-    width: 100%;
+    width: 90%;
     height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .slider-div h2{
     color: black;

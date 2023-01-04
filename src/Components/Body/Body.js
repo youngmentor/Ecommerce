@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import axios from "axios"
+// import axios from "axios"
 import Cards from '../Cards/Cards';
 import Slider from "react-slick";
 import "./Body.css"
@@ -44,7 +44,7 @@ const Body = ({color}) => {
           </div>
         </Slider>
       </div>
-      <Cards theme={color}/>
+      <Cards color={color}/>
     </div>
   )
 }

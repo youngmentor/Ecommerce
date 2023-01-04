@@ -10,26 +10,26 @@ import Category from './Components/Category/Category'
 
 function reducer(state, action){
   switch (action.type){
-    case 'Add':
+    case 'Toggle':
       return !state
   }
 }
 const App = () => {
   
   const [state, dispatch] = useReducer(reducer,JSON.parse(localStorage.getItem('state')))
-  function Add (){
-    dispatch({type: 'Add'})
+  function Toggle (){
+    dispatch({type: 'Toggle'})
   }
   useEffect (()=>{
     localStorage.setItem('state', state);
   }, [state])
   return (
-    <div className='App' style={{backgroundColor: state? 'gray': null}}>
+    <div className='App' style={{backgroundColor: state? 'black': null}}>
        <Router>
-        <Header color={state} change={Add} />
+        <Header color={state} change={Toggle} />
         <Routes>
-          <Route path='/' element={<Body color={state} change={Add}/>}/>
-          <Route path='/detail/:id' element={<Detail/>}/>
+          <Route path='/' element={<Body color={state} change={Toggle}/>}/>
+          <Route path='/detail/:id' element={<Detail color={state} />}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/categories/:cs' element={<Category color={state} />}/>
         </Routes>
