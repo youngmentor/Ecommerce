@@ -10,12 +10,14 @@
     color: white;
 }
 .slider{
+    /* margin-top: 100px; */
     width: 80%;
     text-align: center;
     margin-block: 45px;
 }
 
 .slider-div{
+    margin-top: 100px;
     width: 90%;
     height: 420px;
     display: flex;

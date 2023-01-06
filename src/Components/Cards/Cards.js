@@ -39,7 +39,7 @@ const Cards = ({color}) => {
             <div className='Card-Image-holder'>
               <img src={i.image} className='Card-Image'/>
             </div>
-            <div className='Card-Details'>
+            <div className='Card-sDetail'>
               <p>{i.title}</p>
               <h4>Price:  ₦ {i.price}</h4>
               <h4>Ratings: 4.9</h4>

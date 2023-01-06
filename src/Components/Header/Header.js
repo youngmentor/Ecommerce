@@ -45,11 +45,13 @@ const Header = ({color, change}) => {
       <nav className='Header-links'>
        <NavLink to="/" style={({isActive})=> isActive? activeColorObject:colorObject } > <div className='link1'><h4>Home</h4></div></NavLink>
 
-        <div className='Drop' onMouseEnter={()=>{setState(!state)}}  onMouseLeave={()=>{setState(!state)}}><h4>Category</h4>
+       <NavLink to='/categories' style={({isActive})=> isActive? activeColorObject:colorObject } >
+       <div className='Drop' onMouseEnter={()=>{setState(!state)}}  onMouseLeave={()=>{setState(!state)}}><h4>Category</h4>
           {state && <div className='invisible'> </div>}
         {state && dropdown}
         </div>
-        <NavLink className='cart' to="/Cart" style={({isActive})=> isActive? activeColorObject: colorObject }  > <AiOutlineShoppingCart /> <h4>cart</h4></NavLink>
+       </NavLink>
+        <NavLink className='link2' to="/Cart" style={({isActive})=> isActive? activeColorObject: colorObject }  ><div><AiOutlineShoppingCart /> <h4>cart</h4></div> </NavLink>
       </nav>
       <div className='Header-toggle'>
         <Theme theme={color} toggler={change} />
