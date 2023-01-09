@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import "./Cards.css"
 import  axios  from 'axios';
 import {Link} from "react-router-dom"
-import Loading from './Loading';
+import Loading from '../Loading/Loading';
 const Cards = ({color}) => {
   const [products, setProducts] = useState([]);
-  const  [load, setLoad] = useState(false)
+  const  [load, setLoad] = useState(true)
   async function getProducts(){
     try{
       setLoad(true)
@@ -34,18 +34,18 @@ const Cards = ({color}) => {
     <div className="Card-Holder">
       <div className="Card-Item-Holder">
       {
-        load? <Loading/> :products?.map((i)=>(
-          <Link key={i.id} className='Card-place-holder' to={`/detail/${i.id}`} style={{backgroundColor: color? 'white': null}}>
-            <div className='Card-Image-holder'>
-              <img src={i.image} className='Card-Image'/>
-            </div>
-            <div className='Card-sDetail'>
-              <p>{i.title}</p>
-              <h4>Price:  ₦ {i.price}</h4>
-              <h4>Ratings: 4.9</h4>
-            </div>
-          </Link>
-        ))
+     load ? <Loading color={color} />:products?.map((i)=>(
+      <Link key={i.id} className='Card-place-holder' to={`/detail/${i.id}`} style={{backgroundColor: color? 'white': null}}>
+        <div className='Card-Image-holder'>
+          <img src={i.image} className='Card-Image'/>
+        </div>
+        <div className='Card-sDetail'>
+          <p>{i.title}</p>
+          <h4>Price:  ₦ {i.price}</h4>
+          <h4>Ratings: 4.9</h4>
+        </div>
+      </Link>
+    ))
       }
       </div>
     </div>

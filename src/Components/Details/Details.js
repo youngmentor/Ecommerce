@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import "./Details.css";
 import { Link, useParams } from "react-router-dom"
-import Loading from '../Cards/Loading';
+import Loading from '../Loading/Loading';
 const Details = ({color}) => {
   const { id } = useParams()
   const [products, setProducts] = useState([]);

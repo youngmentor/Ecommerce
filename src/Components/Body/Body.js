@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import clothes from './Clothing.jpg'
 import Electric from './Electronics.jpg'
 import Jewelry from './Jewelry.jpg'
-
+import Loading from '../Loading/Loading';
 
 
 const Body = ({color}) => {
@@ -25,26 +25,34 @@ const Body = ({color}) => {
     cssEase: "linear"
   };
 
-  
+  const [load, setLoad] = useState(true)
+
+  useEffect(()=>{
+    setLoad(false)
+  },)
   return (
     <div className="Body-holder">
-      <div className="slider">
-        <Slider {...settings}>
-          <div className="slider-div">
-            <h2>Get Clothes</h2>
-            <img src={clothes} alt="clothes" className="slider-image" />
-          </div>
-          <div className="slider-div">
-            <h2>Get Jewelries</h2>
-            <img src={Jewelry} alt="jewelry" className="slider-image" />
-          </div>
-          <div className="slider-div">
-            <h2>Get Electronics</h2>
-            <img src={Electric} alt="electronics" className="slider-image" />
-          </div>
-        </Slider>
+     {
+      load? <Loading/> :   <div className='slider-holder'>
+         <div className="slider" style={{color: color? 'white' :undefined}} >
+      <Slider {...settings}>
+        <div className="slider-div">
+          <h2>Get Clothes</h2>
+          <img src={clothes} alt="clothes" className="slider-image" />
+        </div>
+        <div className="slider-div">
+          <h2>Get Jewelries</h2>
+          <img src={Jewelry} alt="jewelry" className="slider-image" />
+        </div>
+        <div className="slider-div">
+          <h2>Get Electronics</h2>
+          <img src={Electric} alt="electronics" className="slider-image" />
+        </div>
+      </Slider>
+    </div>
+    <Cards color={color}/>
       </div>
-      <Cards color={color}/>
+     }
     </div>
   )
 }

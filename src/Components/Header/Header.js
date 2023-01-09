@@ -42,7 +42,7 @@ const Header = ({color, change}) => {
       <div className='Header-logo'>
         <img src={Logo} alt="logo" onClick={() => navigate('/')} />
       </div>
-      <nav className='Header-links'>
+      <nav className='Header-links'style={{color: color? "white": undefined }}>
        <NavLink to="/" style={({isActive})=> isActive? activeColorObject:colorObject } > <div className='link1'><h4>Home</h4></div></NavLink>
 
        <NavLink to='/categories' style={({isActive})=> isActive? activeColorObject:colorObject } >
@@ -51,7 +51,7 @@ const Header = ({color, change}) => {
         {state && dropdown}
         </div>
        </NavLink>
-        <NavLink className='link2' to="/Cart" style={({isActive})=> isActive? activeColorObject: colorObject }  ><div><AiOutlineShoppingCart /> <h4>cart</h4></div> </NavLink>
+        <NavLink className='link2' to="/Cart" style={({isActive})=> isActive? activeColorObject: colorObject }  ><div className='head-cart'><AiOutlineShoppingCart /> <h4>cart</h4></div> </NavLink>
       </nav>
       <div className='Header-toggle'>
         <Theme theme={color} toggler={change} />

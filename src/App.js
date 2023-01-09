@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Detail from './Components/Details/Details'
 import Cart from './Components/Cart/Cart'
 import Category from './Components/Category/Category'
+import Footer from './Components/footer/Footer'
 
 
 function reducer(state, action){
@@ -30,9 +31,10 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Body color={state} change={Toggle}/>}/>
           <Route path='/detail/:id' element={<Detail color={state} />}/>
-          <Route path='/cart' element={<Cart/>}/>
+          <Route path='/cart' element={<Cart color={state} />}/>
           <Route path='/categories/:cs' element={<Category color={state} />}/>
         </Routes>
+        <Footer/>
        </Router>
     </div>
   )

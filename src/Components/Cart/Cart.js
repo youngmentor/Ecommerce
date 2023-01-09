@@ -1,7 +1,7 @@
 import './Cart.css'
 import { useEffect, useState } from 'react'
 import { BsCart3 } from "react-icons/bs";
-const Cart = () => {
+const Cart = ({color}) => {
 
     return (
         <div className='Cart_wrap'>

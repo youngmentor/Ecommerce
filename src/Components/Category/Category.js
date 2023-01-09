@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from "react-router-dom"
 import './Category.css'
-import Loading from '../Cards/Loading';
+import Loading from '../Loading/Loading';
 
 
 const Category = ({color}) => {
@@ -24,7 +24,7 @@ const Category = ({color}) => {
     <div className='Category-Holder'>
       <div className='Category-Item-Holder'>
         {
-          load? <Loading/>  : catigory?.map((item) => (
+          load? <Loading color={color} />  : catigory?.map((item) => (
             <Link key={item.id} className='Category-Place-holder' to={`/detail/${item.id}`} style={{ backgroundColor: color ? 'white' : null }}>
               <div className='Category-Image-holder'>
                 <img src={item.image} className='Category-Image' />
