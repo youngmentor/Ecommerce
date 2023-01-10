@@ -1,14 +1,15 @@
 import '../App.css'
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { MdOutlineLightMode } from 'react-icons/md';
 import { MdOutlineNightlight } from 'react-icons/md';
-const Theme = ({ theme, toggler }) => {
-
+import { ThemeContext } from './API/Context';
+const Theme = () => {
+const {state,Toggle} = useContext(ThemeContext)
     return (
         <div className='theme'>
-            {theme ? <MdOutlineLightMode onClick={() => { toggler() }}
+            {state ? <MdOutlineLightMode onClick={() => { Toggle() }}
                 className='tog' color='white' /> :
-                <MdOutlineNightlight onClick={() => { toggler() }}
+                <MdOutlineNightlight onClick={() => { Toggle() }}
                 className='tog' color='black' />}
         </div>
     )

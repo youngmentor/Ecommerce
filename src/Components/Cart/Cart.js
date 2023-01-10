@@ -1,11 +1,12 @@
 import './Cart.css'
-import { useEffect, useState } from 'react'
+import React, {useContext} from 'react'
+import { ThemeContext } from '../API/Context';
 import { BsCart3 } from "react-icons/bs";
-const Cart = ({color}) => {
-
+const Cart = () => {
+const {state} =useContext(ThemeContext)
     return (
-        <div className='Cart_wrap'>
-            <div className='Cart_holder'>
+        <div className='Cart_wrap' >
+            <div className='Cart_holder' style={{backgroundColor: state? "white": undefined }} >
                 <div className='cart'>
                     <BsCart3 style={{ fontSize: 100,color:'#F48B36'}} />
                 </div>

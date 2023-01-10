@@ -1,11 +1,13 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams, Link } from "react-router-dom"
 import './Category.css'
 import Loading from '../Loading/Loading';
+import { ThemeContext } from '../API/Context';
 
 
 const Category = ({color}) => {
+  const {state}= useContext(ThemeContext)
   const { cs } = useParams()
   const [catigory, setCategory] = useState()
   const  [load, setLoad] = useState(false)
@@ -24,8 +26,8 @@ const Category = ({color}) => {
     <div className='Category-Holder'>
       <div className='Category-Item-Holder'>
         {
-          load? <Loading color={color} />  : catigory?.map((item) => (
-            <Link key={item.id} className='Category-Place-holder' to={`/detail/${item.id}`} style={{ backgroundColor: color ? 'white' : null }}>
+          load? <Loading />  : catigory?.map((item) => (
+            <Link key={item.id} className='Category-Place-holder' to={`/detail/${item.id}`} style={{ backgroundColor: state ? 'white' : null }}>
               <div className='Category-Image-holder'>
                 <img src={item.image} className='Category-Image' />
               </div>

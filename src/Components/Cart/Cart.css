@@ -4,7 +4,6 @@
     height: 100vh;
     align-items: center;
     justify-content: center;
-    /* background-color:gray; */
   }
   .Cart_holder {
     width: 50%;
@@ -17,6 +16,7 @@
     gap: 20px;
     border-radius: 5px;
     background-color: gray;
+    margin-top: 100px;
   }
   
   .Cart_holder button {

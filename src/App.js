@@ -1,4 +1,4 @@
-import React, {useReducer,useEffect} from 'react'
+import React, {useContext} from 'react'
 import Body from './Components/Body/Body'
 import './App.css'
 import Header from './Components/Header/Header'
@@ -7,36 +7,23 @@ import Detail from './Components/Details/Details'
 import Cart from './Components/Cart/Cart'
 import Category from './Components/Category/Category'
 import Footer from './Components/footer/Footer'
-
-
-function reducer(state, action){
-  switch (action.type){
-    case 'Toggle':
-      return !state
-  }
-}
+import { ThemeContext } from './Components/API/Context'
 const App = () => {
+  const {state} = useContext(ThemeContext);
   
-  const [state, dispatch] = useReducer(reducer,JSON.parse(localStorage.getItem('state')))
-  function Toggle (){
-    dispatch({type: 'Toggle'})
-  }
-  useEffect (()=>{
-    localStorage.setItem('state', state);
-  }, [state])
   return (
     <div className='App' style={{backgroundColor: state? 'black': null}}>
-       <Router>
-        <Header color={state} change={Toggle} />
-        <Routes>
-          <Route path='/' element={<Body color={state} change={Toggle}/>}/>
-          <Route path='/detail/:id' element={<Detail color={state} />}/>
-          <Route path='/cart' element={<Cart color={state} />}/>
-          <Route path='/categories/:cs' element={<Category color={state} />}/>
-        </Routes>
-        <Footer/>
-       </Router>
-    </div>
+    <Router>
+     <Header />
+     <Routes>
+       <Route path='/' element={<Body />}/>
+       <Route path='/detail/:id' element={<Detail />}/>
+       <Route path='/cart' element={<Cart />}/>
+       <Route path='/categories/:cs' element={<Category />}/>
+     </Routes>
+     <Footer/>
+    </Router>
+ </div>
   )
 }
 export default App

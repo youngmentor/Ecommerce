@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState,useContext} from 'react'
 // import axios from "axios"
 import Cards from '../Cards/Cards';
 import Slider from "react-slick";
@@ -9,10 +9,11 @@ import clothes from './Clothing.jpg'
 import Electric from './Electronics.jpg'
 import Jewelry from './Jewelry.jpg'
 import Loading from '../Loading/Loading';
+import { ThemeContext } from '../API/Context';
 
 
-const Body = ({color}) => {
-
+const Body = () => {
+const {state}= useContext(ThemeContext)
   const settings = {
     dots: true,
     infinite: true,
@@ -34,7 +35,7 @@ const Body = ({color}) => {
     <div className="Body-holder">
      {
       load? <Loading/> :   <div className='slider-holder'>
-         <div className="slider" style={{color: color? 'white' :undefined}} >
+         <div className="slider" style={{color: state? 'white' :undefined}} >
       <Slider {...settings}>
         <div className="slider-div">
           <h2>Get Clothes</h2>
@@ -50,7 +51,7 @@ const Body = ({color}) => {
         </div>
       </Slider>
     </div>
-    <Cards color={color}/>
+    <Cards/>
       </div>
      }
     </div>

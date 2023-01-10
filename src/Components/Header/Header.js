@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext} from 'react'
 import './Header.css'
 import axios from 'axios';
 import Logo from './Logo.png'
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useNavigate, NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import Theme from '../Theme';
-const Header = ({color, change}) => {
+import { ThemeContext } from '../API/Context';
+
+const Header = () => {
+  const {color} =useContext(ThemeContext)
   const navigate = useNavigate()
   const [state, setState] = useState(false)
   const [item, setItem] =useState([])
-  
   const colorObject={
     textDecoration: 'none',
     color: 'inherit',
@@ -54,7 +55,7 @@ const Header = ({color, change}) => {
         <NavLink className='link2' to="/Cart" style={({isActive})=> isActive? activeColorObject: colorObject }  ><div className='head-cart'><AiOutlineShoppingCart /> <h4>cart</h4></div> </NavLink>
       </nav>
       <div className='Header-toggle'>
-        <Theme theme={color} toggler={change} />
+        <Theme/>
       </div>
     </div>
   )

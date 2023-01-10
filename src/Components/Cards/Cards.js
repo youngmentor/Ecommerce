@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./Cards.css"
 import  axios  from 'axios';
 import {Link} from "react-router-dom"
 import Loading from '../Loading/Loading';
+import { ThemeContext } from '../API/Context';
 const Cards = ({color}) => {
+  const {state}= useContext(ThemeContext)
   const [products, setProducts] = useState([]);
   const  [load, setLoad] = useState(true)
   async function getProducts(){
@@ -35,7 +37,7 @@ const Cards = ({color}) => {
       <div className="Card-Item-Holder">
       {
      load ? <Loading color={color} />:products?.map((i)=>(
-      <Link key={i.id} className='Card-place-holder' to={`/detail/${i.id}`} style={{backgroundColor: color? 'white': null}}>
+      <Link key={i.id} className='Card-place-holder' to={`/detail/${i.id}`} style={{backgroundColor: state? 'white': null}}>
         <div className='Card-Image-holder'>
           <img src={i.image} className='Card-Image'/>
         </div>
