@@ -59,7 +59,7 @@
   justify-content: center;
   border-radius: 10px;
   height: 40px;
-  background-color: rgb(18, 19, 19);
+  /* background-color: rgb(18, 19, 19); */
   transition: background 0.5s ease-in;
   cursor: pointer;
 }
@@ -71,7 +71,7 @@
   justify-content: center;
   border-radius: 10px;
   height: 40px;
-  background-color: rgb(18, 19, 19);
+  /* background-color: rgb(18, 19, 19); */
   transition: background 0.5s ease-in;
   cursor: pointer;
 }

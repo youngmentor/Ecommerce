@@ -1,24 +1,23 @@
-import {  createContext, useReducer, useEffect } from 'react';
-
-function reducer(state, action){
-    switch (action.type){
-      case 'Toggle':
-        return !state
-    }
-  }
+import {  createContext, useReducer, useEffect, useState } from 'react';
+import {useSelector} from 'react-redux'
 export const ThemeContext = createContext();
+
 export const ThemeProvider=({children})=>{
-     
-  const [state, dispatch] = useReducer(reducer,JSON.parse(localStorage.getItem('state')))
-  function Toggle (){
-    dispatch({type: 'Toggle'})
+  const totalAmount = useSelector((state) => state.commerce.total);  
+  const [state, setState] = useState(JSON.parse(localStorage.getItem("state")));
+
+
+  const Toggle=()=>{
+    setState(!state);
   }
-  useEffect (()=>{
-    localStorage.setItem('state', state);
-  }, [state])
+
+  useEffect(()=>{
+    localStorage.setItem("state", state)
+  },[state])
+
 
   return(
-    <ThemeContext.Provider value={{state, Toggle}} >
+    <ThemeContext.Provider value={{state, Toggle, totalAmount}}>
         {children}
     </ThemeContext.Provider>
   )

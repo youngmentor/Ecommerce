@@ -1,9 +1,14 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import "./Details.css";
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import Loading from '../Loading/Loading';
-const Details = ({color}) => {
+import { ThemeContext } from '../API/Context';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../Features/Features'
+const Details = () => {
+  const dispatch = useDispatch()
+  const {state} = useContext(ThemeContext)
   const { id } = useParams()
   const [products, setProducts] = useState([]);
   const [load, setLoad] = useState(false)
@@ -14,6 +19,7 @@ const Details = ({color}) => {
       const res = await axios.get(`https://fakestoreapi.com/products/${id}`)
       console.log(res.data);
       setProducts(res.data)
+      dispatch(addToCart(res.data))
       setLoad(false)
     } catch (error) {
       if (error.response) {
@@ -33,9 +39,9 @@ const Details = ({color}) => {
     getProducts()
   }, [])
   return (
-    <div className="Details-Holder" style={{backgroundColor: color? 'white': null}} >
+    <div className="Details-Holder" style={{backgroundColor: state? 'white': null}} >
      {
-      load? <Loading/>:  <div className="Details-Card">
+      load? <Loading/>:  <div className="Details-Card" style={{backgroundColor: state? "gray": null}} >
       <div className="Details-Image-Holder">
         <img src={products.image} alt="productImage" className="Detail-Image" />
       </div>
@@ -51,9 +57,9 @@ const Details = ({color}) => {
             <h4>Price: ₦ {products.price}</h4>
             <h5>Rating: 3.5</h5>
             </div>
-          <Link className="Cart-Button" to={'/cart'}>
-            <button>Add to cart</button>
-          </Link>
+              <div className="Cart-Button">
+            <button onClick={()=>{dispatch(addToCart(products))}} >Add to cart</button>
+           </div>
         </div>
       </div>
       </div>

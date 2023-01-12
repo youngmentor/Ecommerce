@@ -1,5 +1,5 @@
 import '../App.css'
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { MdOutlineLightMode } from 'react-icons/md';
 import { MdOutlineNightlight } from 'react-icons/md';
 import { ThemeContext } from './API/Context';

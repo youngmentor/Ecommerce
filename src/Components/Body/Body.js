@@ -17,7 +17,6 @@ const {state}= useContext(ThemeContext)
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -30,12 +29,12 @@ const {state}= useContext(ThemeContext)
 
   useEffect(()=>{
     setLoad(false)
-  },)
+  },[load])
   return (
     <div className="Body-holder">
      {
       load? <Loading/> :   <div className='slider-holder'>
-         <div className="slider" style={{color: state? 'white' :undefined}} >
+         <div className="slider" style={{color: state? 'white' :null}} >
       <Slider {...settings}>
         <div className="slider-div">
           <h2>Get Clothes</h2>

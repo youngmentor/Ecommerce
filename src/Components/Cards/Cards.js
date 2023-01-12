@@ -2,9 +2,12 @@ import React, { useContext, useEffect, useState } from 'react'
 import "./Cards.css"
 import  axios  from 'axios';
 import {Link} from "react-router-dom"
+import { useDispatch } from 'react-redux';
+import { collectProducts } from '../../Features/Features';
 import Loading from '../Loading/Loading';
 import { ThemeContext } from '../API/Context';
 const Cards = ({color}) => {
+  const dispatch = useDispatch()
   const {state}= useContext(ThemeContext)
   const [products, setProducts] = useState([]);
   const  [load, setLoad] = useState(true)
@@ -13,7 +16,8 @@ const Cards = ({color}) => {
       setLoad(true)
       const res = await axios.get('https://fakestoreapi.com/products')
       console.log(res.data);
-      setProducts(res.data)
+      setProducts(res.data);
+      dispatch(collectProducts(res.data))
       setLoad(false)
     }catch(error){
       if (error.response) {
