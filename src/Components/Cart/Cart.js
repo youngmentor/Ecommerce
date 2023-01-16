@@ -5,9 +5,9 @@ import CartItem from './CartItem';
 import { useSelector, useDispatch } from 'react-redux';
 import {clearCart} from "../../Features/Features.js";
 import {ThemeContext} from "../API/Context"
-
-
+import { AiFillDelete } from "react-icons/ai";
 const Cart = () => {
+  const {state}= useContext(ThemeContext)
   const {totalAmount}=useContext(ThemeContext)
   const cart = useSelector((state) => state.commerce.cart);
   
@@ -15,12 +15,12 @@ const Cart = () => {
 
 
   return (
-    <div className="Cart-Holder">
-      <div className="Cart-Box">
+    <div className="Cart-Holder" >
+      <div className="Cart-Box"  style={{ backgroundColor: state ? "white" : null }}>
       <div className="Cart-Title">
         <h4>Shopping Cart</h4>
         <h3>Total:  ₦{totalAmount}</h3>
-        <p onClick={()=> {dispatch(clearCart())}}>Remove all</p>
+        <p onClick={()=> {dispatch(clearCart())}}><AiFillDelete/></p>
       </div>
       <div className="Cart-Items">
       {
@@ -30,7 +30,7 @@ const Cart = () => {
       } 
       </div>
       <div className="Cart-Check">
-      <button >Check Out</button>
+      {/* <button >Check Out</button> */}
       </div>
       </div>
     </div>

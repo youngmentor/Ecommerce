@@ -1,94 +1,75 @@
 *{
-    margin:0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 .Details-Holder{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: center;
     align-items: center;
-    color: black;
-    margin-top: 100px;
+    justify-content: center;
 }
-.Details-Card{
+.Details-Card-Holder{
+     width: 50%;
+    /* height: 400px; */
     display: flex;
-    flex-wrap: wrap;
-    width: 60%;
-    height: 70%;
-    padding: 5px;
-    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 50px;
+    background-color: gray; 
+    margin: 10px;
+    color: white;
+    border-radius: 10px;
 }
-.Detail-desc{
-    /* margin-top: 100px; */
-    font-size: 15px;
-}
+    
 .Details-Image-Holder{
-    width: 50%;
-    flex: 1
+    width: 300px;
+    height: 100px;
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    background: gray;
+
 }
 .Detail-Image{
-    background-color: gray;
     width: 100%;
-    height: 100%;
     object-fit: fit;
 }
 .Details-details{
-    width: 50%;
-    height: 60%;
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.price{
-   display: flex;
-   /* flex-direction: column; */
-   gap: 10px;
-}
-.Cart-Button{
-    width: 120px;
-    height: 60px;
-    background-color: tomato;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    border-radius: 8px;
-    /* height: 30px; */
-}
-.Cart-Button button{
-    background-color: tomato;
-   cursor: pointer;
-    border:none;
+    width: 50% ;
+    /* height: 300px ; */
+    padding: 10px;
 }
 .Detail-bottom{
-    margin: 100px;
-    width: 400px;
+    width: 300px;
+    /* height: 80px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-@media screen and (max-width:769px){
-    .Detail-Image{
-        width: 100%;
-        height: 100%;
-    }
-    .Detail-desc{
-        font-size: 10px;
-    }
-    .price{
-        width: 150px;
-        display: flex;
-        gap: 10px;
-    }
-    .Detail-bottom{
-        width: 200px;
-        gap: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.price{
+    width: 40%;
+    display: flex;
+    font-size: 20px;
+    justify-content: space-around;
+}
+.Cart-Button{
+    width: 50%;
+    background-color:orange;
+    display: flex;
+     cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    border-radius: 10px;
+}
+.Cart-Button button{
+    font-size: 25px;
+    outline: none;
+    cursor: pointer;
+     background-color:orange;
+     border: none;
 }

@@ -10,7 +10,7 @@ const CartItem =(props)=>{
 }, [change])
   const dispatch = useDispatch()
     return(
-        // <div className="Cart-Items">
+        <div className="Cart-Items">
           <div className="Cart-Item">
             <img src={props.image} alt="cart-item"/>
             <h5>{props.title}</h5>
@@ -21,7 +21,7 @@ const CartItem =(props)=>{
             </div>
             <h3>${props.price * props.QTY}</h3>
             <p onClick={()=>{ dispatch(removeItem(props.item)); setChange(!change)}}>Remove</p>
-          {/* </div> */}
+        </div>
         </div>
     )
 }

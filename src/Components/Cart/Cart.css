@@ -17,7 +17,7 @@
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: rgb(197, 197, 202);
   color: black;
   border-radius: 5px;
 }
@@ -27,7 +27,7 @@
   position: sticky;
   top: 150px;
   justify-content: space-between;
-  background-color: white;
+  /* background-color: white; */
   width: 100%;
 }
 .Cart-Title p:hover{
@@ -43,7 +43,7 @@
   padding-inline: 10px;
   max-height: 80%;
   overflow-y: scroll;
-  /* align-items: center; */
+  align-items: center;
   /* background-color: yellow; */
 }
 .Cart-Item{
@@ -52,7 +52,7 @@
   height: 80px;
   justify-content: space-between;
   align-items: center;
-  /* background-color: yellow; */
+
 }
 .Cart-Item p:hover{
   color: red;
@@ -62,7 +62,7 @@
 .Cart-Item img{
   width: 70px;
   height: 70px;
-  object-fit: cover;
+  object-fit: fit;
 }
 .Cart-Calc{
   width: 80px;
@@ -70,7 +70,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: yellow; */
+  /* background-color: gray; */
 }
 .Cart-Calc button{
   width: 25px;

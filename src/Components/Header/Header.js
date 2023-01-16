@@ -6,8 +6,10 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useNavigate, NavLink } from 'react-router-dom';
 import Theme from '../Theme';
 import { ThemeContext } from '../API/Context';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+  const amount = useSelector((state) => state.commerce.amount);
   const { state } = useContext(ThemeContext)
   const navigate = useNavigate()
   const [mouse, setMouse] = useState(false)
@@ -54,7 +56,7 @@ const Header = () => {
         </NavLink>
         <NavLink className='link2' to="/Cart"
           style={({ isActive }) => isActive ? activeColorObject : colorObject}  >
-          <div className='head-cart'><AiOutlineShoppingCart /> <h4>cart</h4></div>
+          <div className='head-cart'><AiOutlineShoppingCart /> <h4>cart {amount} </h4></div>
         </NavLink>
       </nav>
       <div className='Header-toggle'>
