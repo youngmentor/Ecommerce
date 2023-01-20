@@ -12,8 +12,9 @@
 }
 .Details-Card-Holder{
      width: 50%;
-    /* height: 400px; */
+    height: 400px;
     display: flex;
+    margin-top: 50px;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
@@ -26,7 +27,7 @@
     
 .Details-Image-Holder{
     width: 300px;
-    height: 100px;
+    height: 300px;
     display: flex;
     margin: 20px;
     align-items: center;
@@ -39,7 +40,7 @@
     object-fit: fit;
 }
 .Details-details{
-    width: 50% ;
+    width: 60% ;
     /* height: 300px ; */
     padding: 10px;
 }

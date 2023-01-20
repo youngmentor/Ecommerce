@@ -1,15 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
-    products: [],
-    cart: [],
-    total: 0,
-    amount: 0,
-}
+// const initialState = {
+//     products: [],
+//     cart: [],
+//     total: 0,
+//     amount: 0,
+// }
 
 const Features = createSlice({
     name: "e-store",
-    initialState,
+    initialState: {
+        products: [],
+        cart: [],
+        total: 0,
+        amount: 0,
+    },
     reducers: {
         collectProducts: (state, { payload }) => {
             state.products = payload;
@@ -30,7 +35,7 @@ const Features = createSlice({
             let amount;
             state.cart.forEach((item) => {
                 amount += item.QTY;
-                total += item.QTY * item.price;
+                total +=( item.QTY * item.price);
             });
             state.amount = amount;
             state.total = total;
@@ -45,7 +50,7 @@ const Features = createSlice({
             let total = 0;
             state.cart.forEach((item) => {
                 amount += item.QTY;
-                total += item.QTY * item.price;
+                total += Math.floor(item.QTY * item.price);
             });
             state.amount = amount;
             state.total = total;

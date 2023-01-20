@@ -6,6 +6,7 @@ import Loading from '../Loading/Loading';
 import { ThemeContext } from '../API/Context';
 import { useDispatch } from 'react-redux';
 import { addToCart, total } from '../../Features/Features'
+import Swal from 'sweetalert2';
 // import { useSelector } from 'react-redux';  +
 const Details = () => {
   // const amount = useSelector((state) => state.commerce.amount);
@@ -41,6 +42,7 @@ const Details = () => {
     getProducts()
   }, [])
   return (
+    <>
     <div className="Details-Holder"  >
       {
         load ? <Loading /> : <div className='Details-Card-Holder'  style={{ backgroundColor: state ? "white" : null }} >
@@ -60,13 +62,23 @@ const Details = () => {
                 <h5>Rating: 3.5</h5>
               </div>
               <div className="Cart-Button">
-                <button onClick={() => {dispatch(addToCart(products)); dispatch(total())}}>Add to cart</button>
+                <button onClick={() => {dispatch(addToCart(products)); 
+                  dispatch(total())
+                  Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'item added successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                  }}>Add to cart</button>
               </div>
             </div>
           </div>
         </div>
       }
     </div>
+    </>
   )
 }
 

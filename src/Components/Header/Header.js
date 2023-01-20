@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import './Header.css'
 import axios from 'axios';
 import Logo from './Logo.png'
+// import Dropdown from '../DropDown/Dropdown';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useNavigate, NavLink } from 'react-router-dom';
 import Theme from '../Theme';
@@ -14,6 +15,7 @@ const Header = () => {
   const navigate = useNavigate()
   const [mouse, setMouse] = useState(false)
   const [item, setItem] = useState([])
+
   const colorObject = {
     textDecoration: 'none',
     color: 'inherit',
@@ -62,6 +64,7 @@ const Header = () => {
       <div className='Header-toggle'>
         <Theme />
       </div>
+      {/* <Dropdown/> */}
     </div>
   )
 }
