@@ -19,7 +19,8 @@ const Details = () => {
   async function getProducts() {
     try {
       setLoad(true)
-      const res = await axios.get(`https://fakestoreapi.com/products/${id}`)
+      // const res = await axios.get(`https://fakestoreapi.com/products/${id}`)
+      const res = await axios.get(`https://free-food-menus-api-production.up.railway.app/burgers/${id}`)
       console.log(res.data);
       setProducts(res.data)
       // dispatch(addToCart(res.data))
@@ -47,13 +48,13 @@ const Details = () => {
       {
         load ? <Loading /> : <div className='Details-Card-Holder'  style={{ backgroundColor: state ? "white" : null }} >
           <div className="Details-Image-Holder">
-            <img src={products.image} alt="productImage" className="Detail-Image" />
+            <img src={products.img} alt="productImage" className="Detail-Image" />
           </div>      
         <div className="Details-details" style={{ color: state ? 'black' : null }} >
             <div className='Detail-desc'>
-              <h3>title: {products.title}</h3>
-              <p>Category: {products.category}</p>
-              <p>Description: {products.description}</p>
+              <h3>title: {products.name}</h3>
+              <p>Category: {products.country}</p>
+              <p>Description: {products.dsc}</p>
               <br />
             </div>
             <div className='Detail-bottom'>
