@@ -20,7 +20,7 @@ const Details = () => {
     try {
       setLoad(true)
       // const res = await axios.get(`https://fakestoreapi.com/products/${id}`)
-      const res = await axios.get(`https://free-food-menus-api-production.up.railway.app/burgers/${id}`)
+      // const res = await axios.get(`https://free-food-menus-api-production.up.railway.app/burgers/${id}`)
       console.log(res.data);
       setProducts(res.data)
       // dispatch(addToCart(res.data))
