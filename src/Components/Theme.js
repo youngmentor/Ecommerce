@@ -2,7 +2,7 @@ import '../App.css'
 import { useContext } from "react"
 import { MdOutlineLightMode } from 'react-icons/md';
 import { MdOutlineNightlight } from 'react-icons/md';
-import { ThemeContext } from './API/Context';
+// import { ThemeContext } from './API/Context';
 
 const Theme = () => {
     const { state, Toggle } = useContext(ThemeContext)
