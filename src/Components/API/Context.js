@@ -1,9 +1,9 @@
 import {  createContext, useReducer, useEffect, useState } from 'react';
-import {useSelector} from 'react-redux'
+// import {useSelector} from 'react-redux'
 export const ThemeContext = createContext();
 
 export const ThemeProvider=({children})=>{
-  const totalAmount = useSelector((state) => state.commerce.total);  
+  // const totalAmount = useSelector((state) => state.commerce.total);  
   const [state, setState] = useState(JSON.parse(localStorage.getItem("state")));
 
 
@@ -17,7 +17,7 @@ export const ThemeProvider=({children})=>{
 
 
   return(
-    <ThemeContext.Provider value={{state, Toggle, totalAmount}}>
+    <ThemeContext.Provider value={{state, Toggle}}>
         {children}
     </ThemeContext.Provider>
   )
