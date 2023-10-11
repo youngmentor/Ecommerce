@@ -41,6 +41,7 @@ const Cards = ({color}) => {
       <div className="Card-Item-Holder">
       {
      load ? <Loading color={color} />:products?.map((i)=>(
+      
       <Link key={i.id} className='Card-place-holder' to={`/detail/${i.id}`} style={{backgroundColor: state? 'white': null}}>
         <div className='Card-Image-holder'>
           <img src={i.image} className='Card-Image'/>
